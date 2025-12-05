@@ -6,21 +6,28 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import Layout from './Layout.jsx';
+// import Layout from './Layout.jsx';
 import StudentDashboard from './Pages/StudentDashboard.jsx';
+import Login from './Pages/Login.jsx';
+import Blog from './Pages/Blog.jsx';
 
 const router = createBrowserRouter([
   { 
     path: "/",
-    element: <StudentDashboard />,
+    element: <App />,
     children: [
-      { index: true, element: <StudentDashboard /> },
+      { path:"/", element: <StudentDashboard /> },
+      {path: "/blog", element: <Blog />}
     ]
   },
+       {
+        path: "/login",
+        element: <Login />
+      }
 ]);
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
+  <>
     <RouterProvider router={router} />
-  </StrictMode>,
+  </>,
 )

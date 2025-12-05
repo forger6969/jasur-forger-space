@@ -6,7 +6,7 @@ const Sidebar = () => {
   const baseClasses = "text-[20px] rounded h-[54px] w-[248px] hover:bg-white hover:text-black flex items-center px-4";
 
   return (
-    <div className='fixed left-5 top-21'>
+    <div className=' left-5 top-21'>
       <ul className='flex flex-col gap-[10px]'>
         <NavLink
           to="/"

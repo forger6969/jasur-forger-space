@@ -1,11 +1,19 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import mars_logo from '../assets/mars_logo.webp'
 import fire from '../assets/fire.svg'
 import coin from '../assets/coin.svg'
 
 import avatar from '../assets/avatar.jpg'
+import { useNavigate } from 'react-router-dom'
 
 const Header = () => {
+    const navigate = useNavigate()
+    const getUser = JSON.parse(localStorage.getItem("currentUser")); 
+ useEffect(() => {
+        if(!getUser) {
+            navigate("/login")
+        }
+    }, [getUser, navigate])
     return (
         <div>
 
@@ -26,7 +34,7 @@ const Header = () => {
 
                         <div className='border-[#D7E1F3] border-[1px] rounded px-[8px] py-[3px] w-fit flex gap-[8px] cursor-pointer'>
                             <img className='w-[20px]' src={coin} alt="" />
-                            <p className='text-[#fc6736] text-[20px]'>319</p>
+                            <p className='text-[#fc6736] text-[20px]'>{getUser.coins || 0}</p>
                         </div>
 
                         <div className='border-[#D7E1F3] border-[1px] rounded px-[8px] py-[3px] w-fit flex gap-[8px] cursor-pointer'>
@@ -37,7 +45,7 @@ const Header = () => {
                         <button className=' w-full bg-gradient-to-r from-[#ce42ff] via-[#27b0fc] to-[#3bf1da] rounded py-[7px] text-white font-bold text-[16px] cursor-pointer'>Obuna boling</button>
 
                         <div className='rounded-full w-fit border-[#979797] border-[3px]'>
-                            <img className='w-[100px] rounded-full' src={avatar} alt="" />
+                            <img className='w-[100px] rounded-full' src={getUser?.avatar || avatar} alt="" />
                         </div>
 
                     </div>

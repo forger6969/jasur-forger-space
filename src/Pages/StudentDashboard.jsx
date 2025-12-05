@@ -1,21 +1,9 @@
 import React from 'react'
-import { Outlet } from 'react-router-dom'
-import Sidebar from '../Components/Sidebar'
-import Header from '../Components/Header'
 
 const StudentDashboard = () => {
-    return (
-        <div>
-
-            <Header />
-
-            <div className='flex mt-[80px] max-w-full w-[95%] mx-auto'>
-                <Sidebar />
-                <Outlet />
-            </div>
-
-        </div>
-    )
+  return (
+    <div>StudentDashboard</div>
+  )
 }
 
 export default StudentDashboard

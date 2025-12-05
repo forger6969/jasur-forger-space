@@ -1,9 +1,9 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
-import Sidebar from '../Components/Sidebar'
-import Header from '../Components/Header'
+import Sidebar from './Components/Sidebar'
+import Header from './Components/Header'
 
-const StudentDashboard = () => {
+const Layout = () => {
     return (
         <div>
 
@@ -18,4 +18,4 @@ const StudentDashboard = () => {
     )
 }
 
-export default StudentDashboard
+export default Layout

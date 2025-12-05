@@ -6,11 +6,16 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+import Layout from './Layout.jsx';
+import StudentDashboard from './Pages/StudentDashboard.jsx';
 
 const router = createBrowserRouter([
-  {
+  { 
     path: "/",
-    element: <App />,
+    element: <StudentDashboard />,
+    children: [
+      { index: true, element: <StudentDashboard /> },
+    ]
   },
 ]);
 
